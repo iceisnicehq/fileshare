@@ -12,6 +12,10 @@ reset_color="\033[0m"
 # Main loop
 while true; do
     color=$(random_color)
-    echo -e "${color}hi${reset_color}"
+    echo -e "${color}hi\n
+    ᓚᘏᗢ\n 
+    /\_/\
+   ( o.o )
+    > ^ <${reset_color}"
     sleep 3
 done
