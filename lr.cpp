@@ -66,3 +66,30 @@ void DataProcessor::processData(const QString &input) {
     QString processedData = "Обработано: " + input;
     emit dataProcessed(processedData);
 }
+
+///
+
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QLabel>
+#include "data_processor.h"
+
+class MainWindow : public QMainWindow {
+    Q_OBJECT
+public:
+    explicit MainWindow(QWidget *parent = nullptr);
+private slots:
+    void handleProcessedData(const QString &data);
+    void onProcessButtonClicked();
+private:
+    QLineEdit *inputField;
+    QLabel *outputLabel;
+    QPushButton *processButton;
+    DataProcessor *processor;
+};
+
+#endif // MAINWINDOW_H
